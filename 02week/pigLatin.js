@@ -10,9 +10,28 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
 
-  // Your code here
+// Your code here
+  
 
+// for words that start with a vowel:
+    if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
+      return word=word+"way";
+  }
+
+// for words that start with one or more consonants
+else {
+//check for multiple consonants
+   for (let i = 0; i<word.length; i++){
+       if (["a", "e", "i", "o", "u"].indexOf(word[i]) > -1){
+           const firstCons = word.slice(0, i);
+           const middle = word.slice(i, word.length);
+           word = middle+firstCons+"ay";
+           break;}
+        }
+return word;}
 }
+
+
 
 
 function getPrompt() {
