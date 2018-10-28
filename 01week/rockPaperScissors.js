@@ -7,13 +7,110 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// nothing
+
+const user1 = 'player1';
+const user2 = 'player2';
+
 
 function rockPaperScissors(hand1, hand2) {
 
   // Write code here
 
-}
+
+// 1. User1 input of rock, paper, or scissors.
+ const choice = ['rock', 'paper' , 'scissors']=>{
+if (! choice) {
+    // User choice was undefined
+    return ("<p>Player 1, type in a correct input (rock, paper, or scissors).</p>");
+} else {
+    // Display user choice
+    return("<p>Player 1:" + " " +  choice + "</p>")
+ }
+};
+
+// 2. User2 input of rock, paper, or scissors.
+const choice = ['rock', 'paper' , 'scissors']=>{
+  if (! choice) {
+      // User choice was undefined
+      return ("<p>Player 2, type in a correct input (rock, paper, or scissors).</p>");
+  } else {
+      // Display user choice
+      return("<p>Player 2:" + " " +  choice + "</p>")
+   }
+  };
+
+// 3. Compare User1 input to User2 input.
+const checkUserInput=()=>{
+
+};
+
+// 4. If User1 input is 'rock' and User2 input is 'scissor', User1 wins.
+if (user1 === "rock") {
+  if (user2 === "scissors") {
+      // rock wins
+      return "You win!";
+  } else {
+      // paper wins
+      return "You lose! Try again.";
+  }
+};
+
+// 5. If User1 input is 'rock' and User2 input is 'paper', User2 wins.
+if (user1 === "rock") {
+  if (user2 === "paper") {
+      // paper wins
+      return "You win!";
+ };
+
+// 6. If User1 input is 'rock' and User2 input is 'rock', it's a tie.
+const compare = (hand1,hand2)=> {
+  if (hand1 === hand2) {
+      return "It's a tie!";
+  }
+
+// 7. If User1 input is 'paper' and User2 input is 'rock', User1 wins.
+if (user1 === "paper") {
+  if (user2 === "rock") {
+      // paper wins
+      return "You win!";
+ }
+
+// 8. If User1 input is 'paper' and User2 input is 'scissors', User2 wins.
+if (user1 === "rock") {
+  if (user2 === "scissors") {
+      // scissors wins
+      return "You win!";
+ }
+
+// 9. If User1 input is 'paper' and User2 input is 'paper', it's a tie.
+const compare = (hand1,hand2)=> {
+  if (hand1 === hand2) {
+      return "It's a tie!";
+  }
+
+// 10. If User1 input is 'scissors' and User2 input is 'paper', User1 wins.
+if (user1 === "scissors") {
+  if (user2 === "paper") {
+      // scissors wins
+      return "You win!";
+ }
+
+// 11. If User1 input is 'scissors' and User2 input is 'rock', User2 wins.
+if (user1 === "scissors") {
+  if (user2 === "rock") {
+      // rock wins
+      return "You win!";
+ }
+
+// 12. If User1 input is 'scissors' and User2 input is 'scissors', it's a tie.
+const compare = (hand1,hand2)=> {
+  if (hand1 === hand2) {
+      return "It's a tie!";
+  }
+
+};
+
+
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
