@@ -7,6 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// nothing
 
 function rockPaperScissors(hand1, hand2) {
 
