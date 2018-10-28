@@ -13,14 +13,62 @@ let stacks = {
   c: []
 };
 
+//Rules
+// Only one disk can be moved at a time
+// A disk can only be moved if it is the uppermost disk on a stack
+// No disk may be placed on top of a smaller disk
+
+
+
+
+// One Solution
+const run = function(){
+  solveTowerOfHanoi(4);
+}
+
+function solveTowerOfHanoi(pieces){
+  solveTower(pieces, 1, 3);
+}
+
+function solveTower(pieces, startStack, endStack){
+  if (pieces == 0) return;
+
+  const middleStact = 6 -startStack -endStack;
+  solveTower(pieces -1, startStack, middleStact);
+
+  const text = "Move {0} from {1} to {2}"
+    .fomat(pieces, stacks[startStack -1], stacks[endStack -1]);
+    return(text);
+
+    solveTower(pieces -1, middleStack, endStack);
+}
+
+// Second Solution
+const disc = prompt("How many discs");
+const result = hanoi(disc, 'A','B','C');
+document.getElementById(result);
+
+function hanoi (n, a, b, c){
+  if (n==1){
+    document.write('Move disc '+n+' from '+a+' to '+b+ "<br>");
+  }else{
+    hanoi (n-1,a,c,b);
+    hanoi (1,a,b,c);
+    hanoi (n-1,c,b,a);
+  }
+}
+
+
+
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(a, b) {
   // Your code here
+  b.push(a.pop().content);
 
 }
 
