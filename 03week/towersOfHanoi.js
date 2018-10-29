@@ -14,9 +14,10 @@ let stacks = {
 };
 
 //Rules
-// Only one disk can be moved at a time
-// A disk can only be moved if it is the uppermost disk on a stack
-// No disk may be placed on top of a smaller disk
+// Only one disk can be moved at a time, movePiece()
+// A disk can only be moved if it is the uppermost disk on a stack, isLegal()
+// No disk may be placed on top of a smaller disk, isLegal()
+// You have to move all disk from on side to the other, checkForWin()
 
 
 
@@ -43,18 +44,14 @@ function solveTower(pieces, startStack, endStack){
     solveTower(pieces -1, middleStack, endStack);
 }
 
-// Second Solution
-const disc = prompt("How many discs");
-const result = hanoi(disc, 'A','B','C');
-document.getElementById(result);
 
-function hanoi (n, a, b, c){
+function stacks (n, a, b, c){
   if (n==1){
-    document.write('Move disc '+n+' from '+a+' to '+b+ "<br>");
+    console.log('Move disc '+n+' from '+a+' to '+b+')
   }else{
-    hanoi (n-1,a,c,b);
-    hanoi (1,a,b,c);
-    hanoi (n-1,c,b,a);
+    stacks (n-1,a,c,b);
+    stacks (1,a,b,c);
+    stacks (n-1,c,b,a);
   }
 }
 
@@ -66,9 +63,9 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece(a, b) {
+function movePiece() {
   // Your code here
-  b.push(a.pop().content);
+
 
 }
 
@@ -83,7 +80,20 @@ function checkForWin() {
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
+// Your code here
+//Rules
+// Only one disk can be moved at a time, movePiece()
+// A disk can only be moved if it is the uppermost disk on a stack, isLegal()
+// No disk may be placed on top of a smaller disk, isLegal()
+// You have to move all disk from on side to the other, checkForWin()
+
+
+  // if (stacks(row, column)){
+  //   if (isEmpty(row, column)){
+  //     board[row][column] = playerTurn;
+  //     if (checkForWin()){
+  //       console.log(playerTurn + ' Wins!');
+  //       resetGame();
 
 }
 
