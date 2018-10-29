@@ -14,22 +14,19 @@ function pigLatin(word) {
   
 
 // for words that start with a vowel:
-    if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
-      return word=word+"way";
-  }
-
-// for words that start with one or more consonants
-else {
+  if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
+    return word+"way";
+  }else {
 //check for multiple consonants
-   for (let i = 0; i<word.length; i++){
-       if (["a", "e", "i", "o", "u"].indexOf(word[i]) > -1){
-           const firstCons = word.slice(0, i);
-           const middle = word.slice(i, word.length);
-           word = middle+firstCons+"ay";
-           break;}
-        }
-return word;}
-}
+    for (let i = 0; i<word.length; i++){
+      if (["a", "e", "i", "o", "u"].indexOf(word[i]) > -1){
+        const firstCons = word.slice(0, i);
+        const middle = word.slice(i, word.length);
+        return middle+firstCons+"ay";
+      }
+    }
+  }
+};
 
 
 
