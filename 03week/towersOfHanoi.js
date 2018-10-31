@@ -50,8 +50,8 @@ function checkForWin() {
 
 
 // Function To Reset Game
-const resetGame = {
-  
+const resetGame=()=>{
+  return stacks;
 }
 
 
