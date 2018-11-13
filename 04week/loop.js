@@ -1,4 +1,14 @@
 // Use a for loop to console.log each item in the array carsInReverse
+const carsInReverse = {
+  car1: 'Ford',
+  car2: 'Honda',
+  car3: 'Lincoln',
+  car4: 'Chevy'
+  };
+
+  for(let i = 0; i < carsInReverse.length; i++){
+    console.log(carsInReverse[i]);
+    }
 
 
 // Create an object (an array with keys and values) called persons with the following data:
@@ -19,12 +29,14 @@ for (const prop in persons) {
 keyBirth = persons.birthDate
 
 for(const prop in keyBirth){
+  if(keyBirth)
     console.log(`${prop} = ${keyBirth[prop]}`)
 }
 
+
 // Use a for loop to console.log the numbers 1 to 1000 (while loop)
-let grade = 0;
-while (grade < 60){
-  grade += 10;
-  console.log("You have a " + grade + " in this class and cannot move on to the next class until your grade is higher than a 70.");
+let loopNum = 0;
+while (loopNum < 1000){
+  loopNum += 1000;
+  console.log(loopNum);
 }
