@@ -4,22 +4,38 @@ const assert = require('assert');
 
 function forEach(arr, callback) {
   // Your code here
+  count.forEach(function(count){
+    console.log(count, 3);
+    });
 }
 
 function map(arr, callback) {
   // Your code here
+  const mapped = mapped.map(function(mapped){
+    return mapped;
+    });
+
 }
 
 function filter(arr, callback) {
   // Your code here
+  const filtered = filtered.filter(function(filtered){
+    return (filtered, [2]);
+  });
 }
 
 function some(arr, callback) {
   // Your code here
+  const somed = somed.some(function(somed){
+    
+  });
 }
 
 function every(arr, callback) {
   // Your code here
+  const everied = everied.every(function(everied){
+    
+  });
 }
 
 if (typeof describe === 'function') {
